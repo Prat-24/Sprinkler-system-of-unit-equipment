@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Equipment Report</title>
+    
+</head>
+
+<body>
+
+    <div class="form-container" id="pdf-content">
+        
+<table class="header-table">
+    <tr>
+        <td rowspan="2" style="width: 10%; text-align: center;">
+            <img src="hpcl-logo.png" alt="HP Logo" class="hp-logo">
+        </td>
+        <td class="header-left">
+            <strong>Hindustan Petroleum Corporation Limited</strong><br><br>
+            Mumbai Refinery
+        </td>
+        <td rowspan="3" class="header-right">
+            Issue No: 1<br>
+            Issue Date: 8/11/2024<br>
+            Rev No: 0<br>
+            Rev Date:<br>
+            <span class="no-wrap">Doc No: HPCL MR/FRM/F&S/08200-08</span>
+        </td>
+        
+    </tr>
+    <tr>
+        <td class="header-left">
+            <strong>Testing Of Sprinkler System of Unit Equipment</strong>
+        </td>
+       
+    </tr>
+   
+</table>
+        <!-- Date and Shift -->
+        <div class="flex-row">
+            <div class="form-group">
+                <label>DATE</label>
+                <input type="date" name="Date">
+            </div>
+
+            <div class="form-group">
+                <label>SHIFT</label>
+                    <select name="Shift" required>
+                        <option value="">Select</option>
+                        <option value="00x08">00x08</option>
+                        <option value="08x20">08x20</option>
+                        <option value="08x16">08x16</option>
+                        <option value="16x00">16x00</option>
+                        <option value="20x08">20x08</option>
+                    </select>
+            </div>
+        </div>    
+      
+            <div class="form-group" style="display: flex; gap: 2rem;">
+                <div style="flex: 1;">
+                    <label>UNIT AREA</label>
+                    <input type="text" name="Unitarea" required>
+                </div>
+                <div style="flex: 1;">
+                    <label>TESTING PERMISSION TAKEN FROM</label>
+                    <input type="text" name="Testingpermission" required>
+                </div>
+            </div>
+
+                
+                    <table>
+                        <tr>
+                          <td>Equipment No</td>
+                          <td>
+                            <input type="text" name="Equipment">
+                          </td>
+                          <td>Unit</td>
+                          <td>
+                            <input type="text" name="unit">
+                          </td>
+                        </tr>
+                        <tr>
+                            <td>Observations</td>
+                            <td>
+                              <input type="text" name="Observations">
+                            </td>
+                            <td>Notification No</td>
+                            <td>
+                              <input type="text" name="NotificationNo">
+                            </td>
+                          </tr>
+                         
+                          <tr>
+                            <td>Status</td>
+                            <td>
+                              <input type="text" name="Status">
+                            </td>
+                            <td>Type of defects</td>
+                            <td>
+                              <input type="text" name="Typeofdefects">
+                            </td>
+                            
+                          </tr> 
+                           
+                          <tr>
+                            <td>Assigned to</td>
+                            <td>
+                              <input type="text" name="Assignedto">
+                            </td>
+                            <td>Last Checked</td>
+                            <td>
+                              <input type="date" name="Lastchecked">
+                            </td>
+                            
+                          </tr> 
+
+                          <tr>
+                            <td>Next due date</td>
+                            <td>
+                              <input type="date" name="NextDuedate">
+                            </td>
+                            <!--<td>ETC(For attending defects)</td>
+                            <td>
+                              <input type="text" name="ETC">
+                            </td>-->
+                          </tr> 
+   
+                    </table>   
+
+                <label>OBSERAVTIONS DURING TESTING</label>
+                <fieldset>
+                    
+                  <div class="observation-row">
+                    <label for="a. Line leak (Yes/No):-">a. Line leak (Yes/No):-</label>
+                    <textarea id="msg1" name="Lineleak" rows="8" cols="40"></textarea>
+                
+                    <label for="b. No of Nozzles Chocked:-">b. No of Nozzles Chocked:-</label>
+                    <textarea id="msg2" name="nozzleschocked" rows="8" cols="40"></textarea>
+                
+                    <label for="c.Any other observations:-">c.Any other observations:-</label>
+                    <textarea id="msg3" name="otherobservations" rows="8" cols="40"></textarea>
+                     
+                    <label>MAINTENANCE FOLLOW UP REQUIRED</label>
+                    <textarea id="msg4" name="Maintenance" rows="8" cols="40"></textarea>
+                </div>
+                </fieldset>
+                
+                    <div class="input-field"><label>SHIFT OFFICER NAME</label><input type="text" name="Shiftofficername" required></div>
+                
+
+                <div class="input-field"><label>OPERATOR NAME</label>
+                    <input type="text" name="OperatorName" required></div>
+                <div class="button-container">
+    
+                    </button>
+                    <button id="saveAsPdf" class="saveAsPdf">Save as PDF</button>
+                </div>
+                    
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>    
+</html>
+    
